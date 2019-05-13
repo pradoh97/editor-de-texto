@@ -33,18 +33,28 @@ body{
   margin: 0 2px;
 }
 
-/* Estilo del select, falta ver de cambiar el estilo de la flecha con el background
+/* Estilo del select, incompatible con chrome */
+/*
 .cinta select{
+  color: black;
   border: 1px solid rgb(209, 209, 209);
   border-radius: 3px;
-  background: rgb(255, 255, 255);
   width: 100px;
   height: 30px;
   padding: 5px;
   outline: none;
-  background: url("");
+  background: rgb(255, 255, 255) url("/img/dropdown-arrow-small.png") no-repeat 95%;
   -moz-appearance: none;
   appearance:none;
+}
+.cinta select:hover{
+  background: rgb(245, 245, 245) url("/img/dropdown-arrow-small.png") no-repeat 95%;
+}
+.cinta select:active{
+  background: rgb(240, 240, 240) url("/img/dropdown-arrow-small.png") no-repeat 95%;
+}
+.cinta option:active{
+  background: white;
 }
 .cinta select:-moz-focusring {
     color: transparent;
@@ -54,6 +64,8 @@ body{
   color: var(--gris-claro);
 }
 */
+/* termina prueba de select*/
+
 /* remover borde interno boton */
 .cinta button::-moz-focus-inner{
   border: none;
