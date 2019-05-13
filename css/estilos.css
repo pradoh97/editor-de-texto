@@ -19,14 +19,44 @@ body{
   border-radius: 3px;
   background: rgb(255, 255, 255);
   width: 30px;
+  height: 30px;
   padding: 5px;
+  outline: none;
 }
 .cinta button:hover{
-  border: 1px solid rgb(209, 209, 209);
   background: rgb(240, 240, 240);
+}
+.cinta button:active{
+  background: rgb(230, 230, 230);
 }
 .cinta div > *{
   margin: 0 2px;
+}
+
+/* Estilo del select, falta ver de cambiar el estilo de la flecha con el background
+.cinta select{
+  border: 1px solid rgb(209, 209, 209);
+  border-radius: 3px;
+  background: rgb(255, 255, 255);
+  width: 100px;
+  height: 30px;
+  padding: 5px;
+  outline: none;
+  background: url("");
+  -moz-appearance: none;
+  appearance:none;
+}
+.cinta select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 rgb(92, 97, 108);
+}
+.cinta select option:not(:checked) {
+  color: var(--gris-claro);
+}
+*/
+/* remover borde interno boton */
+.cinta button::-moz-focus-inner{
+  border: none;
 }
 
 /* barra superior opciones */
@@ -43,7 +73,14 @@ body{
 .secciones > *:not(:last-child){
   border-right: 2px solid var(--gris-claro);
 }
-
+.secciones input[type="number"]{
+  box-sizing: border-box;
+  width: 50px;
+  height: 30px;
+  border: 1px solid var(--gris-claro);
+  border-radius: 3px;
+  padding-left: 5px;
+}
 /* contenido editor */
 .contenido{
   margin-bottom: 5px;
@@ -81,4 +118,10 @@ textarea{
 }
 #send:hover{
   background: hsl(100, 100%, 40%);
+}
+#thrash:active{
+  background: hsl(0, 100%, 40%);
+}
+#send:active{
+  background: hsl(100, 100%, 35%);
 }
