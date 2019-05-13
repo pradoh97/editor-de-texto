@@ -1,6 +1,7 @@
 .contenido{
-    font-size: 14px;
-    font-family: 'Montserrat', 'sans-serif';
+  overflow-x: scroll;
+  font-size: 14px;
+  font-family: 'Montserrat', 'sans-serif';
 }
 .contenido p{
   text-align: justify;
