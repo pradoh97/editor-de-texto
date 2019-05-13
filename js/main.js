@@ -16,7 +16,7 @@ function main(){
 /* Funciones de estilo de caracteres */
 function negrita(){
     let texto = prompt('Escriba el texto:');
-    if (texto === null) {
+    if (texto == "" || texto === null) {
         contenido.innerHTML;
     }else{
         contenido.innerHTML += `<strong>${texto}</strong>`
@@ -24,7 +24,7 @@ function negrita(){
 }
 function italica(){
     let texto = prompt('Escriba el texto:');
-    if (texto === null) {
+    if (texto == "" || texto === null) {
         contenido.innerHTML;
     }else{
         contenido.innerHTML += `<em>${texto}</em>`
@@ -32,7 +32,7 @@ function italica(){
 }
 function subrayado(){
   let texto = prompt('Escriba el texto:');
-  if (texto === null) {
+  if (texto == "" || texto === null) {
       contenido.innerHTML;
   }else{
       contenido.innerHTML += `<span style="text-decoration:underline">${texto}</span>`
@@ -42,7 +42,7 @@ function subrayado(){
 /* Funciones de alineación */
 function alinearIzquierda(){
   let texto = prompt('Escriba el texto:');
-  if (texto === null) {
+  if (texto == "" || texto === null) {
       contenido.innerHTML;
   }else{
       contenido.innerHTML += `<p style="text-align:left">${texto}</span>`
@@ -50,7 +50,7 @@ function alinearIzquierda(){
 }
 function alinearCentro(){
   let texto = prompt('Escriba el texto:');
-  if (texto === null) {
+  if (texto == "" || texto === null) {
       contenido.innerHTML;
   }else{
       contenido.innerHTML += `<p style="text-align:center">${texto}</span>`
@@ -58,7 +58,7 @@ function alinearCentro(){
 }
 function alinearDerecha(){
   let texto = prompt('Escriba el texto:');
-  if (texto === null) {
+  if (texto == "" || texto === null) {
       contenido.innerHTML;
   }else{
       contenido.innerHTML += `<p style="text-align:right">${texto}</span>`
@@ -66,7 +66,7 @@ function alinearDerecha(){
 }
 function justificar(){
   let texto = prompt('Escriba el texto:');
-  if (texto === null) {
+  if (texto == "" || texto === null) {
       contenido.innerHTML;
   }else{
       contenido.innerHTML += `<p style="text-align:justify">${texto}</span>`
