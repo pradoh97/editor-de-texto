@@ -3,6 +3,9 @@
   font-size: 14px;
   font-family: 'Montserrat', 'sans-serif';
 }
+.contenido a{
+  cursor: pointer;
+}
 .contenido p{
   text-align: justify;
   padding-left: 1em;
