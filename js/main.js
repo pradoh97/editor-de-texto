@@ -1,76 +1,52 @@
 window.addEventListener('load', main);
 
 function main(){
+    //Texto
   const botonNegrita = document.getElementById('negrita').addEventListener('click', negrita);
   const botonItalica = document.getElementById('italica').addEventListener('click',italica);
   const botonSubrayado = document.getElementById('subrayado').addEventListener('click',subrayado);
+    //Alineación
   const botonAlinearIzquierda = document.getElementById('alinear-izquierda').addEventListener('click',alinearIzquierda);
   const botonAlinearCentro = document.getElementById('alinear-centro').addEventListener('click',alinearCentro);
   const botonAlinearDerecha = document.getElementById('alinear-derecha').addEventListener('click',alinearDerecha);
   const botonJustificar = document.getElementById('justificar').addEventListener('click',justificar);
+    //Otros
+  const botonInsertarEnlace = document.getElementById('insertar-enlace').addEventListener('click',insertarEnlace);
+
   const contenido = document.querySelector('.contenido');
 }
 
 /* Obtener cursor/selección */
 
-/* Funciones de estilo de caracteres */
 function negrita(){
-    let texto = prompt('Escriba el texto:');
-    if (texto == "" || texto === null) {
-        contenido.innerHTML;
-    }else{
-        contenido.innerHTML += `<strong>${texto}</strong>`
-    }
+    document.execCommand('bold');   
 }
+
 function italica(){
-    let texto = prompt('Escriba el texto:');
-    if (texto == "" || texto === null) {
-        contenido.innerHTML;
-    }else{
-        contenido.innerHTML += `<em>${texto}</em>`
-    }
+    document.execCommand('italic');
 }
 function subrayado(){
-  let texto = prompt('Escriba el texto:');
-  if (texto == "" || texto === null) {
-      contenido.innerHTML;
-  }else{
-      contenido.innerHTML += `<span style="text-decoration:underline">${texto}</span>`
-  }
+    document.execCommand('underline');
 }
 
 /* Funciones de alineación */
 function alinearIzquierda(){
-  let texto = prompt('Escriba el texto:');
-  if (texto == "" || texto === null) {
-      contenido.innerHTML;
-  }else{
-      contenido.innerHTML += `<p style="text-align:left">${texto}</span>`
-  }
+    document.execCommand('justifyLeft');
 }
 function alinearCentro(){
-  let texto = prompt('Escriba el texto:');
-  if (texto == "" || texto === null) {
-      contenido.innerHTML;
-  }else{
-      contenido.innerHTML += `<p style="text-align:center">${texto}</span>`
-  }
+    document.execCommand('justifyCenter');
 }
 function alinearDerecha(){
-  let texto = prompt('Escriba el texto:');
-  if (texto == "" || texto === null) {
-      contenido.innerHTML;
-  }else{
-      contenido.innerHTML += `<p style="text-align:right">${texto}</span>`
-  }
+    document.execCommand('justifyRight');
 }
 function justificar(){
-  let texto = prompt('Escriba el texto:');
-  if (texto == "" || texto === null) {
-      contenido.innerHTML;
-  }else{
-      contenido.innerHTML += `<p style="text-align:justify">${texto}</span>`
-  }
+    document.execCommand('justifyFull');
 }
 
 /* Funciones adjuntar multimedia */
+
+function insertarEnlace(){
+    let linkURL = prompt('Ingrese el link:', 'http://');
+    let textoSeleccionado = window.getSelection();
+    document.execCommand('insertHTML', false, `<a href="${linkURL}" target="_blank">${textoSeleccionado}</a>`);
+}
