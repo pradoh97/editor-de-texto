@@ -116,24 +116,24 @@ textarea{
   align-items: center;
   justify-content: flex-end;
 }
-#thrash{
+#descartar{
   background: rgb(255, 55, 55);
 }
-#send{
+#enviar{
   background: hsl(100, 100%, 45%);
 }
-#send, #thrash{
+#enviar, #descartar{
   color: rgb(255, 255, 255);
 }
-#thrash:hover{
+#descartar:hover{
   background: hsl(0, 100%, 45%);
 }
-#send:hover{
+#enviar:hover{
   background: hsl(100, 100%, 40%);
 }
-#thrash:active{
+#descartar:active{
   background: hsl(0, 100%, 40%);
 }
-#send:active{
+#enviar:active{
   background: hsl(100, 100%, 35%);
 }
