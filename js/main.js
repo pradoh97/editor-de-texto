@@ -1,6 +1,9 @@
 window.addEventListener('load', main);
 
 function main(){
+  //focus inicial al editor
+  document.getElementById('contenido').focus();
+  document.execCommand('insertHTML', false, `<br>`);
     //Texto
   const botonNegrita = document.getElementById('negrita').addEventListener('click', negrita);
   const botonItalica = document.getElementById('italica').addEventListener('click',italica);
@@ -19,7 +22,7 @@ function main(){
 /* Obtener cursor/selección */
 
 function negrita(){
-    document.execCommand('bold');   
+    document.execCommand('bold');
 }
 
 function italica(){
@@ -46,7 +49,23 @@ function justificar(){
 /* Funciones adjuntar multimedia */
 
 function insertarEnlace(){
-    let linkURL = prompt('Ingrese el link:', 'http://');
-    let textoSeleccionado = window.getSelection();
-    document.execCommand('insertHTML', false, `<a href="${linkURL}" target="_blank">${textoSeleccionado}</a>`);
+  let textoURL = window.getSelection();
+  let linkURL = prompt('Ingrese el link:', 'http://');
+
+  if(linkURL === null || linkURL == ""){
+    alert('Debe ingresar una URL');
+    return 0;
+  }
+
+  if(textoURL.type === "Caret"){
+    textoURL = prompt('Ingrese el texto a mostrar:');
+
+    if(textoURL === null || textoURL ==""){
+      alert('Debe ingresar un texto para mostrar');
+      return 0;
+    }
+  }
+
+  document.execCommand('insertHTML', false, `<a href="${linkURL}" target="_blank">${textoURL}</a>`);
+
 }
