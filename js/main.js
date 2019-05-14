@@ -57,10 +57,10 @@ function insertarEnlace(){
     return 0;
   }
 
-  if(textoURL.type === "Caret"){
+  if(textoURL.type === 'Caret'){
     textoURL = prompt('Ingrese el texto a mostrar:');
 
-    if(textoURL === null || textoURL ==""){
+    if(textoURL === null || textoURL == ''){
       alert('Debe ingresar un texto para mostrar');
       return 0;
     }
