@@ -14,7 +14,7 @@ function main(){
   const botonInsertarEnlace = document.getElementById('insertar-enlace').addEventListener('click',insertarEnlace);
   const contenido = document.querySelector('.contenido');
 
-  var pInicial = document.createElement("p");
+  var pInicial = document.createElement('p');
   contenido.appendChild(pInicial);
   setCaret();
 }
@@ -53,7 +53,7 @@ function insertarEnlace(){
   let textoURL = window.getSelection();
   let linkURL = prompt('Ingrese el link:', 'http://');
 
-  if(linkURL === null || linkURL == ""){
+  if(linkURL === null || linkURL == ''){
     alert('Debe ingresar una URL');
     return 0;
   }
@@ -71,7 +71,7 @@ function insertarEnlace(){
 
 /* Funciones de cursor*/
 function setCaret() {
-    var el = document.getElementById("contenido");
+    var el = document.getElementById('contenido');
     var range = document.createRange();
     var sel = window.getSelection();
     range.setStart(el.children[0], 0);
