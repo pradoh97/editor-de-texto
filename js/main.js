@@ -1,9 +1,6 @@
 window.addEventListener('load', main);
 
 function main(){
-  //focus inicial al editor
-  document.getElementById('contenido').focus();
-  document.execCommand('insertHTML', false, `<br>`);
     //Texto
   const botonNegrita = document.getElementById('negrita').addEventListener('click', negrita);
   const botonItalica = document.getElementById('italica').addEventListener('click',italica);
@@ -15,8 +12,11 @@ function main(){
   const botonJustificar = document.getElementById('justificar').addEventListener('click',justificar);
     //Otros
   const botonInsertarEnlace = document.getElementById('insertar-enlace').addEventListener('click',insertarEnlace);
-
   const contenido = document.querySelector('.contenido');
+
+  var pInicial = document.createElement("p");
+  contenido.appendChild(pInicial);
+  setCaret();
 }
 
 /* Obtener cursor/selección */
@@ -35,6 +35,7 @@ function subrayado(){
 /* Funciones de alineación */
 function alinearIzquierda(){
     document.execCommand('justifyLeft');
+
 }
 function alinearCentro(){
     document.execCommand('justifyCenter');
@@ -65,7 +66,17 @@ function insertarEnlace(){
       return 0;
     }
   }
-
   document.execCommand('insertHTML', false, `<a href="${linkURL}" target="_blank">${textoURL}</a>`);
+}
 
+/* Funciones de cursor*/
+function setCaret() {
+    var el = document.getElementById("contenido");
+    var range = document.createRange();
+    var sel = window.getSelection();
+    range.setStart(el.children[0], 0);
+    range.collapse(true);
+    sel.removeAllRanges();
+    sel.addRange(range);
+    el.focus();
 }
